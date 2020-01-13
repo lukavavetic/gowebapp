@@ -27,3 +27,11 @@ func GetUserById() (*User, error) {
 
 	return result, nil
 }
+
+func UpdateUserEmail(email string) {
+	_, err := db.Exec(`UPDATE users SET email = ? WHERE id = ?`, email, 1)
+
+	if err != nil {
+		println(err.Error())
+	}
+}

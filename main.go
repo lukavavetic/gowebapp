@@ -18,7 +18,10 @@ func main() {
 	db := connectToDb()
 	defer db.Close()
 
+	model.UpdateUserEmail("matija.vavetic@gmail.com")
+
 	result, err := model.GetUserById()
+
 
 	if err != nil {
 		panic("wtf")
