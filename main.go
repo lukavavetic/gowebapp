@@ -18,7 +18,11 @@ func main() {
 	db := connectToDb()
 	defer db.Close()
 
-	result := model.GetUserById()
+	result, err := model.GetUserById()
+
+	if err != nil {
+		panic("wtf")
+	}
 
 	fmt.Println(result.Email)
 

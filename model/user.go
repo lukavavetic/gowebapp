@@ -20,8 +20,10 @@ func GetUserById() (*User, error) {
 
 	switch {
 		case err == sql.ErrNoRows:
-		return nil, fmt.Errorf("user not found")
+			return nil, fmt.Errorf("user not found")
+		case err != nil:
+			return nil, err
 	}
 
-	return result
+	return result, nil
 }
