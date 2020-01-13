@@ -1,0 +1,10 @@
+.home-title {
+    font-weight: bolder;
+    color: chartreuse;
+}
+
+.active {
+    font-weight: bolder;
+    font-size: 15px;
+    color: red;
+}
