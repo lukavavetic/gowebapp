@@ -33,7 +33,7 @@ func main() {
 
 	controller.StartUp(templates)
 
-	http.ListenAndServe(":8000", &middleware.TimeoutMiddleware{Next: new(middleware.GzipMiddleware)})
+	http.ListenAndServeTLS(":8000","cert.pem","key.pem", &middleware.TimeoutMiddleware{Next: new(middleware.GzipMiddleware)})
 }
 
 func connectToDb() *sql.DB {
